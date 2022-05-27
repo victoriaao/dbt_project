@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env: 
+      DBT_USER_SNFLAKE: ${{ secrets.DBT_USER_SNFLAKE }}
+      DBT_PASSWORD_SNFLAKE: ${{ secrets.DBT_PASSWORD_SNFLAKE }}
 
     steps:
       - uses: actions/checkout@v3
@@ -24,6 +27,9 @@ jobs:
       - name: Insatll dbt
         run: pip install dbt-snowflake
         
+      - name: Run dbt deps
+        run: dbt build --profiles-dir .
+      
       - name: Run dbt build
         run: dbt build --profiles-dir .
         
