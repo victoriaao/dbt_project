@@ -1,0 +1,80 @@
+dbt_de_task:
+  outputs:
+    dev:
+      account: hv36454.central-us.azure
+      database: ANALYTICS_DEV
+      password: 2467!Sflake
+      role: DBT_TRAINING
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: victoriaao
+      warehouse: DBT_TRAINING_WH
+  target: dev
+dbt_training_new:
+  outputs:
+    dev:
+      account: hv36454.central-us.azure
+      database: ANALYTICS_DEV_N
+      password: 2467!Sflake
+      role: DBT_TRAINING_N
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: VICTORIAAO
+      warehouse: DBT_TRAINING_WH_N
+    prod:
+      account: hv36454.central-us.azure
+      database: ANALYTICS_N
+      password: 2467!Sflake
+      role: DBT_TRAINING_N
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: VICTORIAAO
+      warehouse: DBT_TRAINING_WH_N
+  target: dev
+psql_test:
+  outputs:
+    dev:
+      dbname: viidb
+      host: localhost
+      pass: Postgres123!
+      port: 3310
+      schema: Admin
+      threads: 1
+      type: postgres
+      user: postgres
+    prod:
+      dbname: viidb
+      host: localhost
+      pass: Postgres123!
+      port: 3310
+      schema: Admin
+      threads: 1
+      type: postgres
+      user: postgres
+  target: dev
+snflake_test:
+  outputs:
+    dev:
+      account: bf05262.us-central1.gcp
+      database: ANALYTICS_DEV
+      password: "{{ env_var('DBT_PASSWORD_SNFLAKE') }}"
+      role: sysadmin
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: "{{ env_var('DBT_USER_SNFLAKE') }}"
+      warehouse: DBT_DEMO_WH
+    prod:
+      account: bf05262.us-central1.gcp
+      database: ANALYTICS_DEV
+      password: "{{ env_var('DBT_PASSWORD_SNFLAKE') }}"
+      role: sysadmin
+      schema: PUBLIC
+      threads: 1
+      type: snowflake
+      user: "{{ env_var('DBT_USER_SNFLAKE') }}"
+      warehouse: DBT_DEMO_WH
+  target: dev
