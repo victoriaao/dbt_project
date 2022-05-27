@@ -1,0 +1,8 @@
+
+
+============================== 2022-05-27 19:41:13.765907 | 993edf07-49db-4825-b243-30d8775be46e ==============================
+19:41:13.765921 [info ] [MainThread]: Running with dbt=1.1.0
+19:41:13.766175 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/Users/adeolaolorunfemi/.dbt', 'send_anonymous_usage_stats': True, 'event_buffer_size': 100000, 'quiet': False, 'no_print': False, 'project_name': 'snflake_test', 'skip_profile_setup': False, 'which': 'init', 'indirect_selection': 'eager'}
+19:41:13.766271 [debug] [MainThread]: Tracking: tracking
+19:41:13.798286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc212568910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc212568340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc212568b50>]}
+19:41:13.800342 [debug] [MainThread]: Starter project path: /Users/adeolaolorunfemi/opt/anaconda3/envs/dbt_demo_snflake/lib/python3.10/site-packages/dbt/include/starter_project
